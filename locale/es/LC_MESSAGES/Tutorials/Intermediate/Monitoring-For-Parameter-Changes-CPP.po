@@ -1,0 +1,350 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Open Robotics
+# This file is distributed under the same license as the ROS 2 documentation
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ROS 2 documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-21 15:36+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:6
+msgid "Monitoring for parameter changes (C++)"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:8
+msgid ""
+"**Goal:** Learn to use the ParameterEventHandler class to monitor and "
+"respond to parameter changes."
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:10
+msgid "**Tutorial level:** Intermediate"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:12
+msgid "**Time:** 20 minutes"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:16
+msgid "Contents"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:19
+msgid "Background"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:21
+msgid ""
+"Often a node needs to respond to changes to its own parameters or another"
+" node's parameters. The ParameterEventHandler class makes it easy to "
+"listen for parameter changes so that your code can respond to them. This "
+"tutorial will show you how to use the C++ version of the "
+"ParameterEventHandler class to monitor for changes to a node's own "
+"parameters as well as changes to another node's parameters."
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:26
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:28
+msgid ""
+"Before starting this tutorial, you should first complete the following "
+"tutorials:"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:30
+msgid ""
+":doc:`../Beginner-CLI-Tools/Understanding-ROS2-Parameters/Understanding-"
+"ROS2-Parameters`"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:31
+msgid ":doc:`../Beginner-Client-Libraries/Using-Parameters-In-A-Class-CPP`"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:34
+msgid "Tasks"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:36
+msgid ""
+"In this tutorial, you will create a new package to contain some sample "
+"code, write some C++ code to use the ParameterEventHandler class, and "
+"test the resulting code."
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:40
+msgid "1 Create a package"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:42
+msgid ""
+"First, open a new terminal and :doc:`source your ROS 2 installation "
+"<../Beginner-CLI-Tools/Configuring-ROS2-Environment>` so that ``ros2`` "
+"commands will work."
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:44
+msgid ""
+"Follow :ref:`these instructions <new-directory>` to create a new "
+"workspace named ``ros2_ws``."
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:46
+msgid ""
+"Recall that packages should be created in the ``src`` directory, not the "
+"root of the workspace. So, navigate into ``ros2_ws/src`` and then create "
+"a new package there:"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:53
+msgid ""
+"Your terminal will return a message verifying the creation of your "
+"package ``cpp_parameter_event_handler`` and all its necessary files and "
+"folders."
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:55
+msgid ""
+"The ``--dependencies`` argument will automatically add the necessary "
+"dependency lines to ``package.xml`` and ``CMakeLists.txt``."
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:58
+msgid "1.1 Update ``package.xml``"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:60
+msgid ""
+"Because you used the ``--dependencies`` option during package creation, "
+"you don’t have to manually add dependencies to ``package.xml`` or "
+"``CMakeLists.txt``. As always, though, make sure to add the description, "
+"maintainer email and name, and license information to ``package.xml``."
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:70
+msgid "2 Write the C++ node"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:72
+msgid ""
+"Inside the ``ros2_ws/src/cpp_parameter_event_handler/src`` directory, "
+"create a new file called ``parameter_event_handler.cpp`` and paste the "
+"following code within:"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:118
+msgid "2.1 Examine the code"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:119
+msgid ""
+"The first statement, ``#include <memory>`` is included so that the code "
+"can utilize the std::make_shared template. The next, ``#include "
+"\"rclcpp/rclcpp.hpp\"`` is included to allow the code to reference the "
+"various functionality provided by the rclcpp interface, including the "
+"ParameterEventHandler class."
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:122
+msgid ""
+"After the class declaration, the code defines a class, "
+"``SampleNodeWithParameters``. The constructor for the class declares an "
+"integer parameter ``an_int_param``, with a default value of 0. Next, the "
+"code creates a ``ParameterEventHandler`` that will be used to monitor "
+"changes to parameters. Finally, the code creates a lambda function and "
+"sets it as the callback to invoke whenever ``an_int_param`` is updated."
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:129
+msgid ""
+"It is very important to save the handle that is returned by "
+"``add_parameter_callback``; otherwise, the callback will not be properly "
+"registered."
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:153
+msgid ""
+"Following the ``SampleNodeWithParameters`` is a typical ``main`` function"
+" which initializes ROS, spins the sample node so that it can send and "
+"receive messages, and then shuts down after the user enters ^C at the "
+"console."
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:168
+msgid "2.2 Add executable"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:170
+msgid ""
+"To build this code, first open the ``CMakeLists.txt`` file and add the "
+"following lines of code below the dependency ``find_package(rclcpp "
+"REQUIRED)``"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:183
+msgid "3 Build and run"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:185
+msgid ""
+"It's good practice to run ``rosdep`` in the root of your workspace "
+"(``ros2_ws``) to check for missing dependencies before building:"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:189
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:213
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:299
+msgid "Linux"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:195
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:219
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:305
+msgid "macOS"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:197
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:201
+msgid "rosdep only runs on Linux, so you can skip ahead to next step."
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:199
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:225
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:311
+msgid "Windows"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:203
+msgid ""
+"Navigate back to the root of your workspace, ``ros2_ws``, and build your "
+"new package:"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:209
+msgid "Open a new terminal, navigate to ``ros2_ws``, and source the setup files:"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:231
+msgid "Now run the node:"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:237
+msgid ""
+"The node is now active and has a single parameter and will print a "
+"message whenever this parameter is updated. To test this, open up another"
+" terminal and source the ROS setup file as before (. install/setup.bash) "
+"and execute the following command:"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:244
+msgid ""
+"The terminal running the node will display a message similar to the "
+"following:"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:250
+msgid ""
+"The callback we set previously in the node has been invoked and has "
+"displayed the new updated value. You can now terminate the running "
+"parameter_event_handler sample using ^C in the terminal."
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:254
+msgid "3.1 Monitor changes to another node's parameters"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:256
+msgid ""
+"You can also use the ParameterEventHandler to monitor parameter changes "
+"to another node's parameters. Let's update the SampleNodeWithParameters "
+"class to also monitor for changes to a parameter in another node. We will"
+" use the parameter_blackboard demo application to host a double parameter"
+" that we will monitor for updates."
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:260
+msgid ""
+"First update the constructor to add the following code after the existing"
+" code:"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:278
+msgid ""
+"Then add another member variable, ``cb_handle2`` for the additional "
+"callback handle:"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:289
+msgid ""
+"In a terminal, navigate back to the root of your workspace, ``ros2_ws``, "
+"and build your updated package as before:"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:295
+msgid "Then source the setup files:"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:317
+msgid ""
+"Now, to test monitoring of remote parameters, first run the newly-built "
+"parameter_event_handler code:"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:323
+msgid ""
+"Next, from another teminal (with ROS initialized), run the "
+"parameter_blackboard demo application, as follows:"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:329
+msgid ""
+"Finally, from a third terminal (with ROS initialized), let's set a "
+"parameter on the parameter_blackboard node:"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:335
+msgid ""
+"Upon executing this command, you should see output in the "
+"parameter_event_handler window, indicating that the callback function was"
+" invoked upon the parameter update:"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:342
+msgid "Summary"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:344
+msgid ""
+"You created a node with a parameter and used the ParameterEventHandler "
+"class to set a callback to monitor changes to that parameter. You also "
+"used the same class to monitor changes to a remote node. The "
+"ParameterEventHandler is a convenient way to monitor for parameter "
+"changes so that you can then respond to the updated values."
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:349
+msgid "Related content"
+msgstr ""
+
+#: ../../source/Tutorials/Intermediate/Monitoring-For-Parameter-Changes-CPP.rst:351
+msgid ""
+"To learn how to adapt ROS 1 parameter files for ROS 2, see the "
+":doc:`Migrating YAML parameter files from ROS 1 to ROS2 <../../How-To-"
+"Guides/Parameters-YAML-files-migration-guide>` tutorial."
+msgstr ""
+

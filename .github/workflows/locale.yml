@@ -34,3 +34,16 @@ jobs:
           git add locale
           git commit -m "po files generated from $(git log -1 --pretty=format:%h)"
           git push
+
+  identify:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Statistics
+        run: |
+          for file in $(find locale/es -type f -name "*.po"); do
+            echo "$file: "
+            msgfmt --statistics $file
+          done

@@ -1,0 +1,36 @@
+name: Update .po files
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'source/**'
+    branches:
+      - rolling
+
+jobs:
+  update-po:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies with pip
+        run: pip install --no-warn-script-location --user --upgrade -r requirements.txt
+
+      - name: Generate
+        run: |
+          make gettext updatepo
+
+      - name: Push
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add locale
+          git commit -m "po files generated from $(git log -1 --pretty=format:%h)"
+          git push

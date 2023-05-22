@@ -2,5 +2,6 @@ build/
 _build/
 .idea/
 .vscode/
-
 *.mo
+*__pycache__/
+

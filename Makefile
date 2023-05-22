@@ -5,7 +5,7 @@ OUT        = build
 LINKCHECKDIR  = $(OUT)/linkcheck
 BUILD      = python3 -m sphinx
 OPTS       = -c .
-LANGUAGE   = en# es,fr,de,...
+LANGUAGES  = en es fr
 
 help:
 	@$(BUILD) -M help "$(SOURCE)" "$(OUT)" $(OPTS)
@@ -29,14 +29,13 @@ linkcheck:
 
 .PHONY: help Makefile multiversion test linkcheck updatepo html
 
-ifeq ($(LANGUAGE),en)
-updatepo:
-	@echo It is not necessary to update PO for the language $(LANGUAGE)
-else
 updatepo:
 	@$(BUILD) -M gettext "$(SOURCE)" "$(OUT)" $(OPTS)
-	@sphinx-intl update -p "$(OUT)/gettext" -d "locale" -l '$(LANGUAGE)'
-endif
+	@for lang in $(subst en ,,$(LANGUAGES)); do \
+		sphinx-intl update -p "$(OUT)/gettext" -d "locale" -l $$lang; \
+	done
 
 html:
-	@$(BUILD) -b html "$(SOURCE)" "$(OUT)/html/$(LANGUAGE)" $(OPTS) -D language=$(LANGUAGE)
+	@for lang in $(LANGUAGES); do \
+		$(BUILD) -b html "$(SOURCE)" "$(OUT)/html/$$lang" $(OPTS) -D language=$$lang; \
+	done

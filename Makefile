@@ -29,10 +29,16 @@ linkcheck:
 	@echo
 	@echo "Check finished. Report is in $(LINKCHECKDIR)."
 
-.PHONY: help Makefile multiversion test linkcheck updatepo html
-
 updatepo:
 	@for lang in $(subst en ,,$(LANGUAGES)); do \
 		sphinx-intl update -p "$(OUT)/gettext" -d "locale" -l $$lang; \
 	done
+
+html:
+	@for lang in $(LANGUAGES); do \
+		$(BUILD) -b html -D language=$$lang $(OPTS) $(SOURCE) $(OUT)/html/$$lang; \
+	done
+
+
+.PHONY: help Makefile multiversion test linkcheck updatepo html
 

@@ -36,10 +36,14 @@ jobs:
           git push
 
   identify:
+    needs: update-po
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Install gettext
+        run: sudo apt-get install gettext
 
       - name: Statistics
         run: |

@@ -7,75 +7,84 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ROS 2 documentation \n"
+"Project-Id-Version: ROS 2 documentation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-21 15:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: es\n"
 "Language-Team: es <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.12.1\n"
 
 #: ../../source/Installation/Alternatives/Latest-Development-Setup.rst:2
 msgid "Latest development (source)"
-msgstr ""
+msgstr "Últimos desarrollos (fuentes)"
 
 #: ../../source/Installation/Alternatives/Latest-Development-Setup.rst:4
 msgid ""
-"If you plan to contribute directly to the latest ROS 2 development, you "
-"can install ROS 2 by building it from source or installing testing "
-"binaries. This will give you the latest bug fixes and features."
+"If you plan to contribute directly to the latest ROS 2 development, you can "
+"install ROS 2 by building it from source or installing testing binaries. "
+"This will give you the latest bug fixes and features."
 msgstr ""
+"Si planea contribuir directamente al último desarrollo de ROS 2, puedes "
+"instalar ROS 2 compilándolo desde fuentes o instalando binarios de prueba. "
+"Esto te dará las últimas correcciones de errores y características."
 
 #: ../../source/Installation/Alternatives/Latest-Development-Setup.rst:8
 msgid "Testing binaries"
-msgstr ""
+msgstr "Probando los binarios"
 
 #: ../../source/Installation/Alternatives/Latest-Development-Setup.rst:10
 msgid "See :doc:`Testing <../Testing>`."
-msgstr ""
+msgstr "See :doc:`Testing <../Testing>`."
 
 #: ../../source/Installation/Alternatives/Latest-Development-Setup.rst:13
 msgid "Build from source"
-msgstr ""
+msgstr "Construyendo de fuentes"
 
 #: ../../source/Installation/Alternatives/Latest-Development-Setup.rst:17
 msgid ""
 "The latest development does not go through the same rigorous testing as "
-"releases and is not recommended if you are looking for a stable version "
-"of ROS 2. Instead, choose a :doc:`ROS distribution <../../Installation>` "
-"that has already been released."
+"releases and is not recommended if you are looking for a stable version of "
+"ROS 2. Instead, choose a :doc:`ROS distribution <../../Installation>` that "
+"has already been released."
 msgstr ""
+"Los últimos desarrollos no pasa por las mismas pruebas rigurosas que los "
+"lanzamientos y no se recomienda si estád buscando una versión estable de ROS"
+" 2. En su lugar, elige una :doc:`distribución de ROS <../../Installation>` "
+"que ya haya sido publicada."
 
 #: ../../source/Installation/Alternatives/Latest-Development-Setup.rst:20
 msgid ""
-"Follow the links below for the latest setup instructions for your "
-"platform:"
+"Follow the links below for the latest setup instructions for your platform:"
 msgstr ""
+"Sigue los enlaces a continuación para obtener las últimas instrucciones de "
+"configuración para tu plataforma:"
 
 #: ../../source/Installation/Alternatives/Latest-Development-Setup.rst:22
 msgid ":doc:`Ubuntu Linux <Ubuntu-Development-Setup>`"
-msgstr ""
+msgstr ":doc:`Ubuntu Linux <Ubuntu-Development-Setup>`"
 
 #: ../../source/Installation/Alternatives/Latest-Development-Setup.rst:23
 msgid ":doc:`Windows <Windows-Development-Setup>`"
-msgstr ""
+msgstr ":doc:`macOS <macOS-Development-Setup>`"
 
 #: ../../source/Installation/Alternatives/Latest-Development-Setup.rst:24
 msgid ":doc:`RHEL <RHEL-Development-Setup>`"
-msgstr ""
+msgstr ":doc:`Windows <Windows-Development-Setup>`"
 
 #: ../../source/Installation/Alternatives/Latest-Development-Setup.rst:25
 msgid ":doc:`macOS <macOS-Development-Setup>`"
 msgstr ""
+"Para mantener tu código fuente actualizado, consulta :doc:`Mantener un "
+"checkout de fuentes <../Maintaining-a-Source-Checkout>`."
 
 #: ../../source/Installation/Alternatives/Latest-Development-Setup.rst:27
 msgid ""
 "For keeping your source code up-to-date, see :doc:`Maintain a source "
 "checkout <../Maintaining-a-Source-Checkout>`."
 msgstr ""
-

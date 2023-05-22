@@ -7,219 +7,279 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ROS 2 documentation \n"
+"Project-Id-Version: ROS 2 documentation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-21 15:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: es\n"
 "Language-Team: es <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.12.1\n"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:7
 msgid "Using quality-of-service settings for lossy networks"
-msgstr ""
+msgstr "Uso de configuraciones de calidad de servicio para redes con pérdidas"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:11
 msgid "Table of Contents"
-msgstr ""
+msgstr "Tabla de contenidos"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:14
 msgid "Background"
-msgstr ""
+msgstr "Historial"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:16
 msgid ""
-"Please read the documentation page `about QoS settings <../../Concepts"
-"/About-Quality-of-Service-Settings>` for background information on "
-"available support in ROS 2."
+"Please read the documentation page `about QoS settings "
+"<../../Concepts/About-Quality-of-Service-Settings>` for background "
+"information on available support in ROS 2."
 msgstr ""
+"Lee la página de documentación `sobre la configuración de QoS "
+"<../../Concepts/About-Quality-of-Service-Settings>` para obtener información"
+" general sobre el soporte disponible en ROS 2."
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:18
 msgid ""
-"In this demo, we will spawn a node that publishes a camera image and "
-"another that subscribes to the image and shows it on the screen. We will "
-"then simulate a lossy network connection between them and show how "
-"different quality of service settings handle the bad link."
+"In this demo, we will spawn a node that publishes a camera image and another"
+" that subscribes to the image and shows it on the screen. We will then "
+"simulate a lossy network connection between them and show how different "
+"quality of service settings handle the bad link."
 msgstr ""
+"En esta demostración, generaremos un nodo que publica una imagen de cámara y"
+" otro que se suscribe a la imagen y la muestra en la pantalla. Luego "
+"simularemos una conexión de red con pérdida entre ellos y mostraremos cómo "
+"las diferentes configuraciones de calidad de servicio manejan el enlace "
+"defectuoso."
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:23
 msgid "Prerequisites"
-msgstr ""
+msgstr "Requisitos precios"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:24
 msgid ""
 "This tutorial assumes you have a :doc:`working ROS 2 installation "
 "<../../Installation>` and OpenCV. See the `OpenCV documentation "
-"<http://docs.opencv.org/doc/tutorials/introduction/table_of_content_introduction/table_of_content_introduction.html"
-"#table-of-content-introduction>`__ for its installation instructions. You"
-" will also need the ROS package ``image_tools``."
+"<http://docs.opencv.org/doc/tutorials/introduction/table_of_content_introduction/table_of_content_introduction.html#table-"
+"of-content-introduction>`__ for its installation instructions. You will also"
+" need the ROS package ``image_tools``."
 msgstr ""
+"Este tutorial asume que tienes una :doc:`instalación de ROS 2 "
+"<../../Installation>` y OpenCV. Consulta la documentación de `OpenCV "
+"<http://docs.opencv.org/doc/tutorials/introduction/table_of_content_introduction/table_of_content_introduction.html#table-"
+"of-content-introduction>`__ para conocer las instrucciones de instalación. "
+"También necesitarás el paquete ROS ``image_tools``."
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:30
 msgid "Linux Binaries"
-msgstr ""
+msgstr "Linux Binaries"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:36
 msgid "From Source"
-msgstr ""
+msgstr "From Source"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:45
 msgid "Run the demo"
-msgstr ""
+msgstr "Ejecución de la demo"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:47
 msgid ""
-"Before running the demo, make sure you have a working webcam connected to"
-" your computer."
+"Before running the demo, make sure you have a working webcam connected to "
+"your computer."
 msgstr ""
+"Antes de ejecutar la demostración, asegurate de tener una cámara web en "
+"funcionamiento conectada a su computadora."
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:49
 msgid "Once you've installed ROS 2, source your setup file:"
-msgstr ""
+msgstr "Una vez que hayas instalado ROS 2, obtén tu archivo de instalación:"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:53
 msgid "Linux"
-msgstr ""
+msgstr "Linux"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:59
 msgid "macOS"
-msgstr ""
+msgstr "macOS"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:65
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:71
 msgid "Then run:"
-msgstr ""
+msgstr "Entonces ejecuta:"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:77
 msgid ""
-"Nothing will happen yet. ``showimage`` is a subscriber node that is "
-"waiting for a publisher on the ``image`` topic."
+"Nothing will happen yet. ``showimage`` is a subscriber node that is waiting "
+"for a publisher on the ``image`` topic."
 msgstr ""
+"No pasará nada todavía. ``showimage`` es un nodo suscriptor que está "
+"esperando un editor en el tema ``image``."
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:80
 msgid ""
-"Note: you have to close the ``showimage`` process with ``Ctrl-C`` later. "
-"You can't just close the window."
+"Note: you have to close the ``showimage`` process with ``Ctrl-C`` later. You"
+" can't just close the window."
 msgstr ""
+"Nota: tienes que cerrar el proceso ``showimage`` con ``Ctrl-C`` más tarde. "
+"No puedes simplemente cerrar la ventana."
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:83
 msgid ""
-"In a separate terminal, source the install file and run the publisher "
-"node:"
+"In a separate terminal, source the install file and run the publisher node:"
 msgstr ""
+"En una terminal separada, obtén el archivo de instalación y ejecuta el nodo "
+"publicador:"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:89
 msgid ""
-"This will publish an image from your webcam. In case you don't have a "
-"camera attached to your computer, there is a commandline option which "
-"publishes predefined images."
+"This will publish an image from your webcam. In case you don't have a camera"
+" attached to your computer, there is a commandline option which publishes "
+"predefined images."
 msgstr ""
+"Esto publicará una imagen de su cámara web. En caso de que no tengas una "
+"cámara conectada a su ordenador, hay una opción de línea de comandos que "
+"publica imágenes predefinidas."
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:98
 msgid "In this window, you'll see terminal output:"
-msgstr ""
+msgstr "En esta ventana, verás la salida del terminal:"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:107
 msgid ""
-"A window will pop up with the title \"view\" showing your camera feed. In"
-" the first window, you'll see output from the subscriber:"
+"A window will pop up with the title \"view\" showing your camera feed. In "
+"the first window, you'll see output from the subscriber:"
 msgstr ""
+"Aparecerá una ventana con el título \"vista\" que muestra la transmisión de "
+"su cámara. En la primera ventana, verás el resultado del suscriptor:"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:119
 msgid ""
 "macOS users: If these examples do not work or you receive an error like "
-"``ddsi_conn_write failed -1`` then you'll need to increase your system "
-"wide UDP packet size:"
+"``ddsi_conn_write failed -1`` then you'll need to increase your system wide "
+"UDP packet size:"
 msgstr ""
+"Usuarios de macOS: si estos ejemplos no funcionan o si recibes un error como"
+" ``ddsi_conn_write fail -1``, deberás aumentar el tamaño del paquete UDP en "
+"todo el sistema:"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:126
 msgid ""
-"These changes will not persist a reboot. If you want the changes to "
-"persist, add these lines to ``/etc/sysctl.conf`` (create the file if it "
-"doesn't exist already):"
+"These changes will not persist a reboot. If you want the changes to persist,"
+" add these lines to ``/etc/sysctl.conf`` (create the file if it doesn't "
+"exist already):"
 msgstr ""
+"Estos cambios no persistirán al reiniciar. Si deseas que los cambios "
+"persistan, agrega estas líneas a ``/etc/sysctl.conf`` (crea el archivo si "
+"aún no existe):"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:134
 msgid "Command line options"
-msgstr ""
+msgstr "Opciones de la línea de comandos"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:136
 msgid "In one of your terminals, add a -h flag to the original command:"
-msgstr ""
+msgstr "En uno de tus terminales, agrega un indicador -h al comando original:"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:146
 msgid "Add network traffic"
-msgstr ""
+msgstr "Agregar tráfico de red"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:150
 msgid ""
 "This section of the demo won't work on RTI's Connext DDS. When running "
 "multiple nodes in the same host, the RTI Connext DDS implementation uses "
 "shared memory along with the loopback interface. Degrading the loopback "
-"interface throughput won't affect shared memory, thus traffic between the"
-" two nodes won't be affected."
+"interface throughput won't affect shared memory, thus traffic between the "
+"two nodes won't be affected."
 msgstr ""
+"Esta sección de la demo no funcionará en Connext DDS de RTI. Cuando se "
+"ejecutan varios nodos en el mismo host, la implementación de RTI Connext DDS"
+" usa memoria compartida junto con la interfaz de loopback. La degradación "
+"del rendimiento de la interfaz de loopback no afectará la memoria "
+"compartida, por lo que el tráfico entre los dos nodos no se verá afectado."
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:156
 msgid "This next section is Linux-specific."
-msgstr ""
+msgstr "La siguiente sección es específica de Linux."
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:158
 msgid ""
 "However, for macOS and Windows you can achieve a similar effect with the "
-"utilities \"Network Link Conditioner\" (part of the xcode tool suite) and"
-" \"Clumsy\" (http://jagt.github.io/clumsy/index.html), respectively, but "
-"they will not be covered in this tutorial."
+"utilities \"Network Link Conditioner\" (part of the xcode tool suite) and "
+"\"Clumsy\" (http://jagt.github.io/clumsy/index.html), respectively, but they"
+" will not be covered in this tutorial."
 msgstr ""
+"Sin embargo, para macOS y Windows puedes lograr un efecto similar con las "
+"utilidades \"Network Link Conditioner\" (parte del conjunto de herramientas "
+"xcode) y \"Clumsy\" (http://jagt.github.io/clumsy/index.html), "
+"respectivamente, pero no se tratarán en este tutorial."
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:160
 msgid ""
 "We are going to use the Linux network traffic control utility, ``tc`` "
 "(http://linux.die.net/man/8/tc)."
 msgstr ""
+"Vamos a utilizar la utilidad de control de tráfico de red de Linux, ``tc`` "
+"(http://linux.die.net/man/8/tc)."
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:166
 msgid ""
 "This magical incantation will simulate 5% packet loss over the local "
-"loopback device. If you use a higher resolution of the images (e.g. "
-"``--ros-args -p width:=640 -p height:=480``) you might want to try a "
-"lower packet loss rate (e.g. ``1%``)."
+"loopback device. If you use a higher resolution of the images (e.g. ``--ros-"
+"args -p width:=640 -p height:=480``) you might want to try a lower packet "
+"loss rate (e.g. ``1%``)."
 msgstr ""
+"Este conjuro mágico simulará una pérdida de paquetes del 5% en el "
+"dispositivo de loopback local. Si usas una resolución más alta de las "
+"imágenes (por ejemplo, ``--ros-args -p width:=640 -p height:=480``), es "
+"posible que desees probar una tasa de pérdida de paques más baja (por "
+"ejemplo, 1%)."
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:169
 msgid ""
 "Next we start the ``cam2image`` and ``showimage``, and we'll soon notice "
 "that both programs seem to have slowed down the rate at which images are "
 "transmitted. This is caused by the behavior of the default QoS settings. "
-"Enforcing reliability on a lossy channel means that the publisher (in "
-"this case, ``cam2image``) will resend the network packets until it "
-"receives acknowledgement from the consumer (i.e. ``showimage``)."
+"Enforcing reliability on a lossy channel means that the publisher (in this "
+"case, ``cam2image``) will resend the network packets until it receives "
+"acknowledgement from the consumer (i.e. ``showimage``)."
 msgstr ""
+"A continuación, iniciamos ``cam2image`` y ``showimage``, y pronto notaremos "
+"que ambos programas parecen haber disminuido la velocidad a la que se "
+"transmiten las imágenes. Esto se debe al comportamiento de la configuración "
+"de QoS predeterminada. Hacer cumplir la confiabilidad en un canal con "
+"pérdida significa que el editor (en este caso, ``cam2image``) reenviará los "
+"paquetes de red hasta que reciba el reconocimiento del consumidor (es decir,"
+" ``showimage``)."
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:173
 msgid ""
-"Let's now try running both programs, but with more suitable settings. "
-"First of all, we'll use the ``-p reliability:=best_effort`` option to "
-"enable best effort communication. The publisher will now just attempt to "
-"deliver the network packets, and don't expect acknowledgement from the "
-"consumer. We see now that some of the frames on the ``showimage`` side "
-"were dropped, so the frame numbers in the shell running ``showimage`` "
-"won't be consecutive anymore:"
+"Let's now try running both programs, but with more suitable settings. First "
+"of all, we'll use the ``-p reliability:=best_effort`` option to enable best "
+"effort communication. The publisher will now just attempt to deliver the "
+"network packets, and don't expect acknowledgement from the consumer. We see "
+"now that some of the frames on the ``showimage`` side were dropped, so the "
+"frame numbers in the shell running ``showimage`` won't be consecutive "
+"anymore:"
 msgstr ""
+"Intentaremos ahora ejecutar ambos programas, pero con configuraciones más "
+"adecuadas. En primer lugar, usaremos la opción ``-p "
+"reliability:=best_effort`` para habilitar la comunicación de best effort. El"
+" editor ahora solo intentará entregar los paquetes de red y no esperará el "
+"reconocimiento del consumidor. Vemos ahora que algunos de los cuadros en el "
+"lado de ``showimage`` se eliminaron, por lo que los números de cuadro en el "
+"shell que ejecuta ``showimage`` ya no serán consecutivos:"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:-1
 msgid "Best effort image transfer"
-msgstr ""
+msgstr "Best effort image transfer"
 
 #: ../../source/Tutorials/Demos/Quality-of-Service.rst:184
 msgid "When you're done, remember to delete the queueing discipline:"
-msgstr ""
-
+msgstr "Cuando hayas terminado, recuerda eliminar la disciplina de cola:"

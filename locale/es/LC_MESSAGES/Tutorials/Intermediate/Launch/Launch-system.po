@@ -7,119 +7,132 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ROS 2 documentation \n"
+"Project-Id-Version: ROS 2 documentation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-21 15:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: es\n"
 "Language-Team: es <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.12.1\n"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:8
 msgid "Integrating launch files into ROS 2 packages"
-msgstr ""
+msgstr "Integrar ficheros de launch a paquetes de ROS 2"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:10
 msgid "**Goal:** Add a launch file to a ROS 2 package"
-msgstr ""
+msgstr "**Objetivo:** Añadir un fichero de launch a un paquete de ROS 2"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:12
 msgid "**Tutorial level:** Intermediate"
-msgstr ""
+msgstr "**Nivel del tutorial:** Intermedio"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:14
 msgid "**Time:** 10 minutes"
-msgstr ""
+msgstr "**Tiempo:** 10 minutos"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:18
 msgid "Contents"
-msgstr ""
+msgstr "Contenidos"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:21
 msgid "Prerequisites"
-msgstr ""
+msgstr "Prerequisitos"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:23
 msgid ""
 "You should have gone through the tutorial on how to :doc:`create a ROS 2 "
-"package <../../Beginner-Client-Libraries/Creating-Your-First-"
-"ROS2-Package>`."
+"package <../../Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>`."
 msgstr ""
+"Deberías de haber repasado el tutorial sobre como :doc:`Crear un paquete de "
+"ROS 2<../../Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>`."
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:25
 msgid ""
-"As always, don’t forget to source ROS 2 in :doc:`every new terminal you "
-"open <../../Beginner-CLI-Tools/Configuring-ROS2-Environment>`."
+"As always, don’t forget to source ROS 2 in :doc:`every new terminal you open"
+" <../../Beginner-CLI-Tools/Configuring-ROS2-Environment>`."
 msgstr ""
+"Como siempre, no te olvides de sincronizar las fuentes de ROS 2 en "
+":doc:`cada terminal que abra <../../Beginner-CLI-Tools/Configuring-"
+"ROS2-Environment>`."
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:28
 msgid "Background"
-msgstr ""
+msgstr "Antecedentes"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:30
 msgid ""
-"In the :doc:`previous tutorial <Creating-Launch-Files>`, we saw how to "
-"write a standalone launch file. This tutorial will show how to add a "
-"launch file to an existing package, and the conventions typically used."
+"In the :doc:`previous tutorial <Creating-Launch-Files>`, we saw how to write"
+" a standalone launch file. This tutorial will show how to add a launch file "
+"to an existing package, and the conventions typically used."
 msgstr ""
+"En el :doc:`tutorial anterior <Creating-Launch-Files>`, vimos como escribir "
+"un fichero de launch independiente. Este tutorial mostrará como añadir un "
+"fichero de launch a un paquete existente, y las convenciones que se suelen "
+"utilizar."
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:34
 msgid "Tasks"
-msgstr ""
+msgstr "Tareas"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:37
 msgid "1 Create a package"
-msgstr ""
+msgstr "1 Crear un paquete"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:39
 msgid "Create a workspace for the package to live in:"
-msgstr ""
+msgstr "Crea un workspace donde vivirá el paquete:"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:43
 msgid "Linux"
-msgstr ""
+msgstr "Linux"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:50
 msgid "macOS"
-msgstr ""
+msgstr "macOS"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:57
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:66
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:86
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:203
 msgid "Python package"
-msgstr ""
+msgstr "Python package"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:72
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:123
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:225
 msgid "C++ package"
-msgstr ""
+msgstr "C++ package"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:79
 msgid "2 Creating the structure to hold launch files"
-msgstr ""
+msgstr "2 Crear la estructura para mantener ficheros de launch"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:81
 msgid ""
-"By convention, all launch files for a package are stored in the "
-"``launch`` directory inside of the package. Make sure to create a "
-"``launch`` directory at the top-level of the package you created above."
+"By convention, all launch files for a package are stored in the ``launch`` "
+"directory inside of the package. Make sure to create a ``launch`` directory "
+"at the top-level of the package you created above."
 msgstr ""
+"Por convención, todos los ficheros de launch para un paquete son almacenados"
+" en la carpeta ``launch`` dentro del paquete. Asegúrate de crear la carpeta "
+"``launch`` en el nivel mas alto del paquete que creaste arriba."
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:88
 msgid ""
-"For Python packages, the directory containing your package should look "
-"like this:"
+"For Python packages, the directory containing your package should look like "
+"this:"
 msgstr ""
+"Para los paquetes de Python, la carpeta que contiene tu paquete debe verse "
+"como esto:"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:102
 msgid ""
@@ -127,65 +140,81 @@ msgid ""
 "setup tools of our launch files using the ``data_files`` parameter of "
 "``setup``."
 msgstr ""
+"Para que colcon pueda encontrar los ficheros de launch, necesitamos informar"
+" a las herramientas de setup de Pyton acerca de nuestros ficheros de launch "
+"usando el parámetro ``data_files`` de ``setup``."
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:104
 msgid "Inside our ``setup.py`` file:"
-msgstr ""
+msgstr "Dentro de nuestro fichero ``setup.py``:"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:125
 msgid ""
-"For C++ packages, we will only be adjusting the ``CMakeLists.txt`` file "
-"by adding:"
+"For C++ packages, we will only be adjusting the ``CMakeLists.txt`` file by "
+"adding:"
 msgstr ""
+"Para los paquetes de C++, solo ajustaremos el fichero de ``CMakeLists.txt`` "
+"añadiendo:"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:135
 msgid "to the end of the file (but before ``ament_package()``)."
-msgstr ""
+msgstr "al final del fichero (pero antes de ``ament_package()``)."
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:139
 msgid "3 Writing the launch file"
-msgstr ""
+msgstr "3 Escribir el fichero de launch"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:143
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:207
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:229
 msgid "Python launch file"
-msgstr ""
+msgstr "Python launch file"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:145
 msgid ""
 "Inside your ``launch`` directory, create a new launch file called "
-"``my_script_launch.py``. ``_launch.py`` is recommended, but not required,"
-" as the file suffix for Python launch files. However, the launch file "
-"name needs to end with ``launch.py`` to be recognized and autocompleted "
-"by ``ros2 launch``."
+"``my_script_launch.py``. ``_launch.py`` is recommended, but not required, as"
+" the file suffix for Python launch files. However, the launch file name "
+"needs to end with ``launch.py`` to be recognized and autocompleted by ``ros2"
+" launch``."
 msgstr ""
+"Dentro de tu carpeta ``launch``, crea un nuevo fichero de launch llamado "
+"``my_script_launch.py``. Se recomienda``_launch.py``, aunque no es "
+"obligatorio, como sufijo para ficheros de launch de Python. Sin embargo, el "
+"nombre del fichero de launch necesita terminar con ``launch.py`` para ser "
+"reconocido y autocompletado por ``ros2 launch``."
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:149
 msgid ""
 "Your launch file should define the ``generate_launch_description()`` "
-"function which returns a ``launch.LaunchDescription()`` to be used by the"
-" ``ros2 launch`` verb."
+"function which returns a ``launch.LaunchDescription()`` to be used by the "
+"``ros2 launch`` verb."
 msgstr ""
+"Tu fichero de launch debe definir la función "
+"``generate_launch_description()``, la cual regresa un "
+"``launch.LaunchDescription()`` que es usado por el verbo ``ros2 launch``."
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:164
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:213
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:235
 msgid "XML launch file"
-msgstr ""
+msgstr "XML launch file"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:166
 msgid ""
 "Inside your ``launch`` directory, create a new launch file called "
-"``my_script_launch.xml``. ``_launch.xml`` is recommended, but not "
-"required, as the file suffix for XML launch files."
+"``my_script_launch.xml``. ``_launch.xml`` is recommended, but not required, "
+"as the file suffix for XML launch files."
 msgstr ""
+"Dentro de tu carpeta ``launch``, crea un nuevo fichero de launch llamado "
+"``my_script_launch.xml``. Se recomienda``_launch.xml``, aunque no es "
+"obligatorio, como sufijo para ficheros de launch de XML."
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:175
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:219
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:241
 msgid "YAML launch file"
-msgstr ""
+msgstr "YAML launch file"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:177
 msgid ""
@@ -193,24 +222,30 @@ msgid ""
 "``my_script_launch.yaml``. ``_launch.yaml`` is recommended, but not "
 "required, as the file suffix for YAML launch files."
 msgstr ""
+"Dentro de tu carpeta ``launch``, crea un nuevo fichero de launch llamado "
+"``my_script_launch.yaml``. Se recomienda``_launch.xml``, aunque no es "
+"obligatorio, como sufijo para ficheros de launch de YAML."
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:191
 msgid "4 Building and running the launch file"
-msgstr ""
+msgstr "4 Compilar y ejecutar el fichero de launch"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:193
 msgid "Go to the top-level of the workspace, and build it:"
-msgstr ""
+msgstr "Ve al nivel mas alto del workspace, y compílalo:"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:199
 msgid ""
 "After the ``colcon build`` has been successful and you've sourced the "
 "workspace, you should be able to run the launch file as follows:"
 msgstr ""
+"Después de que ``colcon build`` haya sido exitoso y que hayas ejecutado "
+"source en el workspace, deberías de ser capas de ejecutar el fichero de "
+"launch como sigue:"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:249
 msgid "Documentation"
-msgstr ""
+msgstr "Documentación"
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:251
 msgid ""
@@ -218,11 +253,20 @@ msgid ""
 "<https://github.com/ros2/launch/blob/rolling/launch/doc/source/architecture.rst>`__"
 " provides more details on concepts that are also used in ``launch_ros``."
 msgstr ""
+"`The launch documentation "
+"<https://github.com/ros2/launch/blob/rolling/launch/doc/source/architecture.rst>`__"
+" provides more details on concepts that are also used in ``launch_ros``. `La"
+" documentación de launch "
+"<https://github.com/ros2/launch/blob/rolling/launch/doc/source/architecture.rst>`__"
+" provee mas destalles sobre los conceptos que también son usados en "
+"``launch_ros``."
 
 #: ../../source/Tutorials/Intermediate/Launch/Launch-system.rst:253
 msgid ""
-"Additional documentation/examples of launch capabilities are forthcoming."
-" See the source code (https://github.com/ros2/launch and "
+"Additional documentation/examples of launch capabilities are forthcoming. "
+"See the source code (https://github.com/ros2/launch and "
 "https://github.com/ros2/launch_ros) in the meantime."
 msgstr ""
-
+"Documentación y ejemplos adicionales sobre las capacidades de launch están "
+"por venir. De momento ve el código fuente (https://github.com/ros2/launch y "
+"https://github.com/ros2/launch_ros)."

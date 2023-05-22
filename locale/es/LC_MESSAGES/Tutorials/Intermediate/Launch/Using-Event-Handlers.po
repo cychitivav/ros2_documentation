@@ -7,90 +7,111 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ROS 2 documentation \n"
+"Project-Id-Version: ROS 2 documentation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-21 15:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: es\n"
 "Language-Team: es <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.12.1\n"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:7
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:39
 msgid "Using event handlers"
-msgstr ""
+msgstr "Utilizar controladores de eventos"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:9
 msgid "**Goal:** Learn about event handlers in ROS 2 launch files"
 msgstr ""
+"**Objetivo:** Aprender acerca de los controladores de eventos en ficheros de"
+" launch de ROS 2"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:11
 msgid "**Tutorial level:** Intermediate"
-msgstr ""
+msgstr "**Nivel del tutorial:** Intermedio"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:13
 msgid "**Time:** 15 minutes"
-msgstr ""
+msgstr "**Tiempo:** 15 minutos"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:17
 msgid "Table of Contents"
-msgstr ""
+msgstr "Tabla de Contenido"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:20
 msgid "Background"
-msgstr ""
+msgstr "Antecedentes"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:22
 msgid ""
 "Launch in ROS 2 is a system that executes and manages user-defined "
 "processes. It is responsible for monitoring the state of processes it "
-"launched, as well as reporting and reacting to changes in the state of "
-"those processes. These changes are called events and can be handled by "
-"registering an event handler with the launch system. Event handlers can "
-"be registered for specific events and can be useful for monitoring the "
-"state of processes. Additionally, they can be used to define a complex "
-"set of rules which can be used to dynamically modify the launch file."
+"launched, as well as reporting and reacting to changes in the state of those"
+" processes. These changes are called events and can be handled by "
+"registering an event handler with the launch system. Event handlers can be "
+"registered for specific events and can be useful for monitoring the state of"
+" processes. Additionally, they can be used to define a complex set of rules "
+"which can be used to dynamically modify the launch file."
 msgstr ""
+"Launch en ROS 2 es un sistema que ejecuta y maneja procesos definidos por un"
+" usuario. Es responsable de monitorizar el estado de los procesos launched, "
+"así como de reportar y reaccionar a los cambios en el estado de esos "
+"procesos. Estos cambios son llamados eventos y pueden ser controlados al "
+"registrar un controlador de eventos con el sistema de launch. Controladores "
+"de eventos pueden ser registrados para eventos específicos y puede ser "
+"útiles para monitorizar el estado de procesos. Adicionalmente, ellos puede "
+"ser usados para definir un conjunto complejo de reglas, las cuales pueden "
+"ser usadas para modificar dinámicamente el fichero de launch."
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:28
 msgid ""
-"This tutorial shows usage examples of event handlers in ROS 2 launch "
-"files."
+"This tutorial shows usage examples of event handlers in ROS 2 launch files."
 msgstr ""
+"Este tutorial muestra ejemplos de uso de controladores de eventos en "
+"ficheros de launch de ROS 2."
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:31
 msgid "Prerequisites"
-msgstr ""
+msgstr "Prerequisitos"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:33
 msgid ""
-"This tutorial uses the :doc:`turtlesim <../../Beginner-CLI-Tools"
-"/Introducing-Turtlesim/Introducing-Turtlesim>` package. This tutorial "
+"This tutorial uses the :doc:`turtlesim <../../Beginner-CLI-"
+"Tools/Introducing-Turtlesim/Introducing-Turtlesim>` package. This tutorial "
 "also assumes you have :doc:`created a new package <../../Beginner-Client-"
-"Libraries/Creating-Your-First-ROS2-Package>` of build type "
-"``ament_python`` called ``launch_tutorial``."
+"Libraries/Creating-Your-First-ROS2-Package>` of build type ``ament_python`` "
+"called ``launch_tutorial``."
 msgstr ""
+"Este tutorial usa el paquete de :doc:`turtlesim <../../Beginner-CLI-"
+"Tools/Introducing-Turtlesim/Introducing-Turtlesim>`. Este tutorial también "
+"asume que tu has :doc:`creado un nuevo paquete <../../Beginner-Client-"
+"Libraries/Creating-Your-First-ROS2-Package>` de tipo de compilación "
+"``ament_python`` llamado ``launch_tutorial``."
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:36
 msgid ""
 "This tutorial extends the code shown in the :doc:`Using substitutions in "
 "launch files <./Using-Substitutions>` tutorial."
 msgstr ""
+"Este tutorial extiende el código mostrado en el tutorial :doc:`Utilizar "
+"substituciones en ficheros de launch <./Using-Substitutions>`."
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:42
 msgid "1 Event handlers example launch file"
-msgstr ""
+msgstr "1 Ejemplo de fichero de launch con controladores de evento"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:44
 msgid ""
-"Create a new file called ``example_event_handlers_launch.py`` file in the"
-" ``launch`` folder of the ``launch_tutorial`` package."
+"Create a new file called ``example_event_handlers_launch.py`` file in the "
+"``launch`` folder of the ``launch_tutorial`` package."
 msgstr ""
+"Crea un nuevo fichero llamado ``example_event_handlers_launch.py`` en la "
+"carpeta ``launch`` del paquete ``launch_tutorial``."
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:183
 msgid ""
@@ -98,145 +119,176 @@ msgid ""
 "``OnProcessIO``, ``OnExecutionComplete``, ``OnProcessExit``, and "
 "``OnShutdown`` events were defined in the launch description."
 msgstr ""
+"Las acciones ``RegisterEventHandler`` para los eventos ``OnProcessStart``, "
+"``OnProcessIO``, ``OnExecutionComplete``, ``OnProcessExit`` y ``OnShutdown``"
+" fueron definidas en la descripción del launch."
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:185
 msgid ""
-"The ``OnProcessStart`` event handler is used to register a callback "
-"function that is executed when the turtlesim node starts. It logs a "
-"message to the console and executes the ``spawn_turtle`` action when the "
-"turtlesim node starts."
+"The ``OnProcessStart`` event handler is used to register a callback function"
+" that is executed when the turtlesim node starts. It logs a message to the "
+"console and executes the ``spawn_turtle`` action when the turtlesim node "
+"starts."
 msgstr ""
+"El controlador de evento ``OnProcessStart`` es usado para registrar una "
+"función callback que es ejecutada cuando el nodo turtlesim empieza. Registra"
+" un mensaje en la consola y ejecuta la acción ``spawn_turtle`` cuando el "
+"nodo turtlesim empieza."
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:200
 msgid ""
-"The ``OnProcessIO`` event handler is used to register a callback function"
-" that is executed when the ``spawn_turtle`` action writes to its standard"
-" output. It logs the result of the spawn request."
+"The ``OnProcessIO`` event handler is used to register a callback function "
+"that is executed when the ``spawn_turtle`` action writes to its standard "
+"output. It logs the result of the spawn request."
 msgstr ""
+"El controlador de evento ``OnProcessIO`` es usado para registrar una función"
+" callback que es ejecutada cuando la acción ``spawn_turtle`` escribe su "
+"salida estándar. Registra el resultado de la solicitud de despliegue."
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:215
 msgid ""
 "The ``OnExecutionComplete`` event handler is used to register a callback "
 "function that is executed when the ``spawn_turtle`` action completes. It "
-"logs a message to the console and executes the ``change_background_r`` "
-"and ``change_background_r_conditioned`` actions when the spawn action "
-"completes."
+"logs a message to the console and executes the ``change_background_r`` and "
+"``change_background_r_conditioned`` actions when the spawn action completes."
 msgstr ""
+"El controlador de evento ``OnExecutionComplete`` es usado para registrar una"
+" función callback que se ejecuta cuando la acción ``spawn_turtle`` es "
+"completada. Registra un mensaje en la consola y ejecuta las acciones "
+"``change_background_r`` y ``change_background_r_conditioned`` cuando la "
+"acción de despliegue es completada."
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:234
 msgid ""
-"The ``OnProcessExit`` event handler is used to register a callback "
-"function that is executed when the turtlesim node exits. It logs a "
-"message to the console and executes the ``EmitEvent`` action to emit a "
-"``Shutdown`` event when the turtlesim node exits. It means that the "
-"launch process will shutdown when the turtlesim window is closed."
+"The ``OnProcessExit`` event handler is used to register a callback function "
+"that is executed when the turtlesim node exits. It logs a message to the "
+"console and executes the ``EmitEvent`` action to emit a ``Shutdown`` event "
+"when the turtlesim node exits. It means that the launch process will "
+"shutdown when the turtlesim window is closed."
 msgstr ""
+"El controlador de evento ``OnProcessExit`` es usado para registrar una "
+"función callback que se ejecuta cuando el nodo turtlesim termina. Registra "
+"un mensaje en la consola y ejecuta la acción ``EmitEvent`` para emitir un "
+"evento ``Shutdown`` cuando el nodo turtlesim termina. Esto significa que el "
+"proceso launch terminará cuando la ventana de turtlesim se cierre."
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:252
 msgid ""
 "Finally, the ``OnShutdown`` event handler is used to register a callback "
-"function that is executed when the launch file is asked to shutdown. It "
-"logs a message to the console why the launch file is asked to shutdown. "
-"It logs the message with a reason for shutdown like the closure of "
-"turtlesim window or ``ctrl-c`` signal made by the user."
+"function that is executed when the launch file is asked to shutdown. It logs"
+" a message to the console why the launch file is asked to shutdown. It logs "
+"the message with a reason for shutdown like the closure of turtlesim window "
+"or ``ctrl-c`` signal made by the user."
 msgstr ""
+"Finalmente, el controlador de evento ``OnShutdown`` es usado para registrar "
+"una función callback que se ejecuta cuando se solicita la terminación del "
+"fichero de launch. Registra un mensaje en la consola sobre el porque se "
+"solicitó la terminación del fichero de launch. Registra el mensaje con una "
+"razón para la terminación como el cierre de la ventana de turtlesim o la "
+"señal ``ctrl-c`` hecha por el usuario."
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:268
 msgid "Build the package"
-msgstr ""
+msgstr "Compila el paquete"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:270
 msgid "Go to the root of the workspace, and build the package:"
-msgstr ""
+msgstr "Ve a la raíz del workspace, y compila el paquete."
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:276
 msgid "Also remember to source the workspace after building."
-msgstr ""
+msgstr "También recuerda ejecutar source al workspace después de compilar."
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:279
 msgid "Launching example"
-msgstr ""
+msgstr "Ejemplo de launching"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:281
 msgid ""
-"Now you can launch the ``example_event_handlers_launch.py`` file using "
-"the ``ros2 launch`` command."
+"Now you can launch the ``example_event_handlers_launch.py`` file using the "
+"``ros2 launch`` command."
 msgstr ""
+"Ahora puedes hacer launch al fichero ``example_event_handlers_launch.py`` "
+"usando el comando ``ros2 launch``."
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:287
 msgid "This will do the following:"
-msgstr ""
+msgstr "Esto hará lo siguiente:"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:289
 msgid "Start a turtlesim node with a blue background"
-msgstr ""
+msgstr "Empieza un nodo turtlesim con el fondo azul"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:290
 msgid "Spawn the second turtle"
-msgstr ""
+msgstr "Despliega la segunda tortuga"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:291
 msgid "Change the color to purple"
-msgstr ""
+msgstr "Change the color to purple"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:292
 msgid ""
-"Change the color to pink after two seconds if the provided "
-"``background_r`` argument is ``200`` and ``use_provided_red`` argument is"
-" ``True``"
-msgstr ""
+"Change the color to pink after two seconds if the provided ``background_r`` "
+"argument is ``200`` and ``use_provided_red`` argument is ``True``"
+msgstr "Cambia el color a morado."
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:293
 msgid "Shutdown the launch file when the turtlesim window is closed"
 msgstr ""
+"Cambia el color a rosa después de dos segundos si el argumento "
+"``background_r`` es ``200`` y el argumento ``use_provided_red`` es ``True``"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:295
 msgid "Additionally, it will log messages to the console when:"
-msgstr ""
+msgstr "Termina el fichero de launch cuando la ventana de turtlesim se cierra"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:297
 msgid "The turtlesim node starts"
-msgstr ""
+msgstr "Adicionalmente, registrará mensajes en la consola cuando:"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:298
 msgid "The spawn action is executed"
-msgstr ""
+msgstr "El nodo turtlesim empieza"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:299
 msgid "The ``change_background_r`` action is executed"
-msgstr ""
+msgstr "La acción de despliegue se ejecuta"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:300
 msgid "The ``change_background_r_conditioned`` action is executed"
-msgstr ""
+msgstr "La acción ``change_background_r`` se ejecuta"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:301
 msgid "The turtlesim node exits"
-msgstr ""
+msgstr "La acción ``change_background_r_conditioned`` se ejecuta"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:302
 msgid "The launch process is asked to shutdown."
-msgstr ""
+msgstr "El nodo turtlesim termina"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:305
 msgid "Documentation"
-msgstr ""
+msgstr "Se solicita el terminado al proceso de launch"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:307
 msgid ""
 "`The launch documentation "
 "<https://github.com/ros2/launch/blob/rolling/launch/doc/source/architecture.rst>`_"
 " provides detailed information about available event handlers."
-msgstr ""
+msgstr "Documentación"
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:310
 msgid "Summary"
 msgstr ""
+"`La documentación de launch "
+"<https://github.com/ros2/launch/blob/rolling/launch/doc/source/architecture.rst>`_"
+" provee información detallada acerca de los controladores de eventos "
+"disponibles."
 
 #: ../../source/Tutorials/Intermediate/Launch/Using-Event-Handlers.rst:312
 msgid ""
-"In this tutorial, you learned about using event handlers in launch files."
-" You learned about their syntax and usage examples to define a complex "
-"set of rules to dynamically modify launch files."
-msgstr ""
-
+"In this tutorial, you learned about using event handlers in launch files. "
+"You learned about their syntax and usage examples to define a complex set of"
+" rules to dynamically modify launch files."
+msgstr "Resumen"

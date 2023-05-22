@@ -7,187 +7,221 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ROS 2 documentation \n"
+"Project-Id-Version: ROS 2 documentation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-21 15:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: es\n"
 "Language-Team: es <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.12.1\n"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:7
 msgid "Quality guide: ensuring code quality"
-msgstr ""
+msgstr "Guía de calidad: garantizar la calidad del código"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:11
 msgid "Table of Contents"
-msgstr ""
+msgstr "Tabla de Contenido"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:13
 msgid ""
-"This page gives guidance about how to improve the software quality of ROS"
-" 2 packages, focusing on more specific areas than the Quality Practices "
-"section of the :doc:`Developer Guide <Developer-Guide>`."
+"This page gives guidance about how to improve the software quality of ROS 2 "
+"packages, focusing on more specific areas than the Quality Practices section"
+" of the :doc:`Developer Guide <Developer-Guide>`."
 msgstr ""
+"This page gives guidance about how to improve the software quality of ROS 2 "
+"packages, focusing on more specific areas than the Quality Practices section"
+" of the :doc:`Developer Guide <Developer-Guide>`."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:15
 msgid ""
-"The sections below intend to address ROS 2 core, application and "
-"ecosystem packages and the core client libraries, C++ and Python. The "
-"solutions presented are motivated by design and implementation "
-"considerations to improve quality attributes like \"Reliability\", "
-"\"Security\", \"Maintainability\", \"Determinism\", etc. which relate to "
-"non-functional requirements."
+"The sections below intend to address ROS 2 core, application and ecosystem "
+"packages and the core client libraries, C++ and Python. The solutions "
+"presented are motivated by design and implementation considerations to "
+"improve quality attributes like \"Reliability\", \"Security\", "
+"\"Maintainability\", \"Determinism\", etc. which relate to non-functional "
+"requirements."
 msgstr ""
+"Las siguientes secciones pretenden abordar los paquetes básicos, de "
+"aplicaciones y de ecosistemas de ROS 2 y las bibliotecas principales de "
+"clientes, C++ y Python. Las soluciones presentadas están motivadas por "
+"consideraciones de diseño e implementación para mejorar atributos de calidad"
+" como \"Confiabilidad\", \"Seguridad\", \"Mantenibilidad\", "
+"\"Determinismo\", etc. que se relacionan con requisitos no funcionales."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:20
 msgid "Static code analysis as part of the ament package build"
 msgstr ""
+"Análisis de código estático como parte de la compilación del paquete ament"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:22
 msgid "**Context**:"
-msgstr ""
+msgstr "**Contexto**:"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:24
 msgid "You have developed your C++ production code."
-msgstr ""
+msgstr "Has desarrollado tu código de producción C++."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:25
 msgid "You have created a ROS 2 package with build support with ``ament``."
-msgstr ""
+msgstr "Has creado un paquete ROS 2 con soporte de compilación con ``ament``."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:27
 msgid "**Problem**:"
-msgstr ""
+msgstr "**Problema**:"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:29
 msgid ""
-"Library level static code analysis is not run as part of the package "
-"build procedure."
+"Library level static code analysis is not run as part of the package build "
+"procedure."
 msgstr ""
+"El análisis de código estático a nivel de biblioteca no se ejecuta como "
+"parte del procedimiento de creación del paquete."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:30
 msgid "Library level static code analysis needs to be executed manually."
 msgstr ""
+"El análisis de código estático a nivel de biblioteca debe ejecutarse "
+"manualmente."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:31
 msgid ""
 "Risk of forgetting to execute library level static code analysis before "
 "building a new package version."
 msgstr ""
+"Riesgo de olvidarse de ejecutar el análisis de código estático a nivel de "
+"biblioteca antes de construir una nueva versión del paquete."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:34
 msgid "**Solution**:"
-msgstr ""
+msgstr "**Solución**:"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:36
 msgid ""
 "Use the integration capabilities of ``ament`` to execute static code "
 "analysis as part of the package build procedure."
 msgstr ""
+"Usa las capacidades de integración de ``ament`` para ejecutar análisis de "
+"código estático como parte del procedimiento de construcción del paquete."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:39
 msgid "**Implementation**:"
-msgstr ""
+msgstr "**Implementación**:"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:41
 msgid "Insert into the packages ``CMakeLists.txt`` file."
-msgstr ""
+msgstr "Insert into the packages ``CMakeLists.txt`` file."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:53
 msgid ""
 "Insert the ``ament_lint`` test dependencies into the packages "
 "``package.xml`` file."
 msgstr ""
+"Inserta las dependencias de prueba ``ament_lint`` en el archivo "
+"``package.xml`` de los paquetes."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:65
 msgid "**Examples**:"
-msgstr ""
+msgstr "**Ejemplos**:"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:67
 msgid "``rclcpp``:"
-msgstr ""
+msgstr "``rclcpp``:"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:69
 msgid ""
 "`rclcpp/rclcpp/CMakeLists.txt "
 "<https://github.com/ros2/rclcpp/blob/rolling/rclcpp/CMakeLists.txt>`__"
 msgstr ""
+"`rclcpp/rclcpp/CMakeLists.txt "
+"<https://github.com/ros2/rclcpp/blob/rolling/rclcpp/CMakeLists.txt>`__"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:70
 msgid ""
 "`rclcpp/rclcpp/package.xml "
 "<https://github.com/ros2/rclcpp/blob/rolling/rclcpp/package.xml>`__"
 msgstr ""
+"`rclcpp/rclcpp/package.xml "
+"<https://github.com/ros2/rclcpp/blob/rolling/rclcpp/package.xml>`__"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:72
 msgid "``rclcpp_lifecycle``:"
-msgstr ""
+msgstr "``rclcpp_lifecycle``:"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:74
 msgid ""
 "`rclcpp/rclcpp_lifecycle/CMakeLists.txt "
 "<https://github.com/ros2/rclcpp/blob/rolling/rclcpp_lifecycle/CMakeLists.txt>`__"
 msgstr ""
+"`rclcpp/rclcpp_lifecycle/CMakeLists.txt "
+"<https://github.com/ros2/rclcpp/blob/rolling/rclcpp_lifecycle/CMakeLists.txt>`__"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:75
 msgid ""
 "`rclcpp/rclcpp_lifecycle/package.xml "
 "<https://github.com/ros2/rclcpp/blob/rolling/rclcpp_lifecycle/package.xml>`__"
 msgstr ""
+"`rclcpp/rclcpp_lifecycle/package.xml "
+"<https://github.com/ros2/rclcpp/blob/rolling/rclcpp_lifecycle/package.xml>`__"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:77
 msgid "**Resulting context**:"
-msgstr ""
+msgstr "**Contexto resultante**:"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:79
 msgid ""
-"The static code analysis tools supported by ``ament`` are run as part of "
-"the package build."
+"The static code analysis tools supported by ``ament`` are run as part of the"
+" package build."
 msgstr ""
+"Las herramientas de análisis de código estático soportadas por ``ament`` se "
+"ejecutan como parte de la construcción del paquete."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:80
 msgid ""
-"Static code analysis tools not supported by ``ament`` need to be executed"
-" separately."
+"Static code analysis tools not supported by ``ament`` need to be executed "
+"separately."
 msgstr ""
+"Las herramientas de análisis de código estático que no son compatibles con "
+"``ament`` deben ejecutarse por separado."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:83
 msgid "Static Thread Safety Analysis via Code Annotation"
 msgstr ""
+"Análisis estático de seguridad de hilos a través de la anotación de código"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:85
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:221
 msgid "**Context:**"
-msgstr ""
+msgstr "**Contexto:**"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:87
 msgid "You are developing/debugging your multithreaded C++ production code"
-msgstr ""
+msgstr "Estás desarrollando/depurando tu código de producción C++ multihilo"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:88
 msgid "You access data from multiple threads in C++ code"
-msgstr ""
+msgstr "Accedes a datos de múltiples hilos en código C++"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:90
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:228
 msgid "**Problem:**"
-msgstr ""
+msgstr "**Problema:**"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:92
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:230
 msgid "Data races and deadlocks can lead to critical bugs."
 msgstr ""
+"Las carreras de datos y los interbloqueos pueden provocar errores críticos."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:94
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:234
 msgid "**Solution:**"
-msgstr ""
+msgstr "**Solución:**"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:96
 msgid ""
@@ -195,292 +229,388 @@ msgid ""
 "<https://clang.llvm.org/docs/ThreadSafetyAnalysis.html>`__ by annotating "
 "threaded code"
 msgstr ""
+"Utiliza el `Análisis de seguridad de hilos estático de Clang "
+"<https://clang.llvm.org/docs/ThreadSafetyAnalysis.html>`__ al anotar el "
+"código de subproceso"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:98
 msgid "**Context For Implementation:**"
-msgstr ""
+msgstr "**Contexto para la implementación:**"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:101
 msgid ""
-"To enable Thread Safety Analysis, code must be annotated to let the "
-"compiler know more about the semantics of the code. These annotations are"
-" Clang-specific attributes - e.g. ``__attribute__(capability()))``. "
-"Instead of using those attributes directly, ROS 2 provides preprocessor "
-"macros that are erased when using other compilers."
+"To enable Thread Safety Analysis, code must be annotated to let the compiler"
+" know more about the semantics of the code. These annotations are Clang-"
+"specific attributes - e.g. ``__attribute__(capability()))``. Instead of "
+"using those attributes directly, ROS 2 provides preprocessor macros that are"
+" erased when using other compilers."
 msgstr ""
+"Para habilitar el Análisis de Seguridad de hilos, se debe anotar el código "
+"para que el compilador sepa más sobre la semántica del código. Estas "
+"anotaciones son atributos específicos de Clang, p. "
+"``__atributo__(capacidad()))``. En lugar de usar esos atributos "
+"directamente, ROS 2 proporciona macros de preprocesador que se borran cuando"
+" se usan otros compiladores."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:105
 msgid ""
 "These macros can be found in `rcpputils/thread_safety_annotations.hpp "
 "<https://github.com/ros2/rcpputils/blob/rolling/include/rcpputils/thread_safety_annotations.hpp>`__"
 msgstr ""
+"Estas macros se pueden encontrar en `rcpputils/thread_safety_annotations.hpp"
+" "
+"<https://github.com/ros2/rcpputils/blob/rolling/include/rcpputils/thread_safety_annotations.hpp>`__"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:108
 msgid "The Thread Safety Analysis documentation states"
-msgstr ""
+msgstr "La documentación del análisis de seguridad de hilos establece"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:108
 msgid ""
-"Thread safety analysis can be used with any threading library, but it "
-"does require that the threading API be wrapped in classes and methods "
-"which have the appropriate annotations"
+"Thread safety analysis can be used with any threading library, but it does "
+"require that the threading API be wrapped in classes and methods which have "
+"the appropriate annotations"
 msgstr ""
+"El análisis de seguridad de hilos se puede usar con cualquier biblioteca de "
+"hilos, pero requiere que la API de hilos se incluya en clases y métodos que "
+"tengan las anotaciones adecuadas."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:110
 msgid ""
-"We have decided that we want ROS 2 developers to be able to use ``std::``"
-" threading primitives directly for their development. We do not want to "
+"We have decided that we want ROS 2 developers to be able to use ``std::`` "
+"threading primitives directly for their development. We do not want to "
 "provide our own wrapped types as is suggested above."
 msgstr ""
+"Hemos decidido que queremos que los desarrolladores de ROS 2 puedan usar "
+"primitivas de subprocesamiento ``std::`` directamente para su desarrollo. No"
+" queremos proporcionar nuestros propios tipos envueltos como se sugiere "
+"anteriormente."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:113
 msgid "There are three C++ standard libraries to be aware of"
-msgstr ""
+msgstr "Hay tres bibliotecas estándar de C++ a tener en cuenta"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:115
 msgid ""
-"The GNU standard library ``libstdc++`` - default on Linux, explicitly via"
-" the compiler option ``-stdlib=libstdc++``"
+"The GNU standard library ``libstdc++`` - default on Linux, explicitly via "
+"the compiler option ``-stdlib=libstdc++``"
 msgstr ""
+"La biblioteca estándar GNU ``libstdc++``: predeterminada en Linux, "
+"explícitamente a través de la opción del compilador ``-stdlib=libstdc++``"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:116
 msgid ""
-"The LLVM standard library ``libc++`` (also called ``libcxx`` ) - default "
-"on macOS,  explicitly set by the compiler option ``-stdlib=libc++``"
+"The LLVM standard library ``libc++`` (also called ``libcxx`` ) - default on "
+"macOS,  explicitly set by the compiler option ``-stdlib=libc++``"
 msgstr ""
+"La biblioteca estándar LLVM ``libc++`` (también llamada ``libcxx``) - "
+"predeterminada en macOS, establecida explícitamente por la opción del "
+"compilador ``-stdlib=libc++``"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:117
 msgid "The Windows C++ Standard Library - not relevant to this use case"
 msgstr ""
+"La biblioteca estándar de Windows C++: no es relevante para este caso de uso"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:119
 msgid ""
 "``libcxx`` annotates its ``std::mutex`` and ``std::lock_guard`` "
-"implementations for Thread Safety Analysis. When using GNU ``libstdc++`` "
-", those annotations are not present, so Thread Safety Analysis cannot be "
-"used on non-wrapped ``std::`` types."
+"implementations for Thread Safety Analysis. When using GNU ``libstdc++`` , "
+"those annotations are not present, so Thread Safety Analysis cannot be used "
+"on non-wrapped ``std::`` types."
 msgstr ""
+"``libcxx`` anota sus implementaciones ``std::mutex`` y ``std::lock_guard`` "
+"para el análisis de seguridad de hilos. Cuando se usa GNU ``libstdc++`` , "
+"esas anotaciones no están presentes, por lo que el análisis de seguridad de "
+"hilos no se puede usar en tipos ``std::`` no encapsulados."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:121
 msgid ""
-"*Therefore, to use Thread Safety Analysis directly with* ``std::`` "
-"*types, we must use* ``libcxx``"
+"*Therefore, to use Thread Safety Analysis directly with* ``std::`` *types, "
+"we must use* ``libcxx``"
 msgstr ""
+"*Por lo tanto, para usar Thread Safety Analysis directamente con tipos* "
+"``std::`` *, debemos usar* ``libcxx``"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:123
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:238
 msgid "**Implementation:**"
-msgstr ""
+msgstr "**Implementación:**"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:125
 msgid ""
-"The code migration suggestions here are by no means complete - when "
-"writing (or annotating existing) threaded code, you are encouraged to "
-"utilize as many of the annotations as is logical for your use case. "
-"However, this step-by-step is a great place to start!"
+"The code migration suggestions here are by no means complete - when writing "
+"(or annotating existing) threaded code, you are encouraged to utilize as "
+"many of the annotations as is logical for your use case. However, this step-"
+"by-step is a great place to start!"
 msgstr ""
+"Las sugerencias de migración de código aquí de ninguna manera están "
+"completas - al escribir (o anotar las existentes) código multihilo, se te "
+"recomienda a utilizar tantas anotaciones como sea lógico para tu caso de "
+"uso. Sin embargo, ¡este paso a paso es un gran lugar para comenzar!"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:128
 msgid "Enabling Analysis for Package/Target"
-msgstr ""
+msgstr "Habilitación de análisis para paquete/objetivo"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:130
 msgid ""
-"When the C++ compiler is Clang, enable the ``-Wthread-safety`` flag. "
-"Example below for CMake-based projects"
+"When the C++ compiler is Clang, enable the ``-Wthread-safety`` flag. Example"
+" below for CMake-based projects"
 msgstr ""
+"Cuando el compilador de C++ es Clang, habilite el indicador ``-Wthread-"
+"safety``. Ejemplo a continuación para proyectos basados en CMake"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:139
 msgid "Annotating Code"
-msgstr ""
+msgstr "Código de anotación"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:141
 msgid "Step 1 - Annotate data members"
-msgstr ""
+msgstr "Paso 1 - Anotar miembros de datos"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:143
 msgid "Find anywhere that ``std::mutex`` is used to protect some member data"
 msgstr ""
+"Encuentre en cualquier lugar que ``std::mutex`` se use para proteger algunos"
+" datos de miembros"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:144
 msgid ""
-"Add the ``RCPPUTILS_TSA_GUARDED_BY(mutex_name)`` annotation to the data "
-"that is protected by the mutex"
+"Add the ``RCPPUTILS_TSA_GUARDED_BY(mutex_name)`` annotation to the data that"
+" is protected by the mutex"
 msgstr ""
+"Agrega la anotación ``RCPPUTILS_TSA_GUARDED_BY(mutex_name)`` a los datos que"
+" están protegidos por el mutex"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:164
 msgid "Step 2 - Fix Warnings"
-msgstr ""
+msgstr "Paso 2: corregir advertencias"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:166
 msgid ""
-"In the above example - ``Foo::get`` will produce a compiler warning! To "
-"fix it, lock before returning bar"
+"In the above example - ``Foo::get`` will produce a compiler warning! To fix "
+"it, lock before returning bar"
 msgstr ""
+"En el ejemplo anterior, ``Foo::get`` producirá una advertencia del "
+"compilador. Para solucionarlo, bloquear antes de volver a la bar"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:175
 msgid ""
-"Step 3 - (Optional but Recommended) Refactor Existing Code to Private-"
-"Mutex Pattern"
+"Step 3 - (Optional but Recommended) Refactor Existing Code to Private-Mutex "
+"Pattern"
 msgstr ""
+"Paso 3 - (Opcional pero recomendado) Refactorizar el código existente a un "
+"patrón privado-Mutex"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:177
 msgid ""
-"A recommended pattern in threaded C++ code is to always keep your "
-"``mutex`` as a ``private:`` member of the data structure. This makes data"
-" safety the concern of the containing structure, offloading that "
-"responsibility from users of the structure and minimizing the surface "
-"area of affected code."
+"A recommended pattern in threaded C++ code is to always keep your ``mutex`` "
+"as a ``private:`` member of the data structure. This makes data safety the "
+"concern of the containing structure, offloading that responsibility from "
+"users of the structure and minimizing the surface area of affected code."
 msgstr ""
+"Un patrón recomendado en código C++ multihilo es mantener siempre su "
+"``mutex`` como miembro ``privado:`` de la estructura de datos. Esto hace que"
+" la seguridad de los datos sea la preocupación de la estructura contenedora,"
+" descargando esa responsabilidad de los usuarios de la estructura y "
+"minimizando el área superficial del código afectado."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:179
 msgid ""
 "Making your locks private may require rethinking the interfaces to your "
 "data. This is a great exercise - here are a few things to consider"
 msgstr ""
+"Hacer que sus bloqueos sean privados puede requerir repensar las interfaces "
+"de sus datos. Este es un gran ejercicio - aquí hay algunas cosas a "
+"considerar"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:181
 msgid ""
-"You may want to provide specialized interfaces for performing analysis "
-"that requires complex locking logic, e.g. counting members in a filtered "
-"set of a mutex-guarded map structure, instead of actually returning the "
-"underlying structure to consumers"
+"You may want to provide specialized interfaces for performing analysis that "
+"requires complex locking logic, e.g. counting members in a filtered set of a"
+" mutex-guarded map structure, instead of actually returning the underlying "
+"structure to consumers"
 msgstr ""
+"Es posible que desees proporcionar interfaces especializadas para realizar "
+"análisis que requieran una lógica de bloqueo compleja, p. contar miembros en"
+" un conjunto filtrado de una estructura de mapa protegida por mutex, en "
+"lugar de devolver la estructura subyacente a los consumidores"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:182
 msgid ""
-"Consider copying to avoid blocking, where the amount of data is small. "
-"This can let other threads get on with accessing the shared data, which "
-"can potentially lead to better overall performance."
+"Consider copying to avoid blocking, where the amount of data is small. This "
+"can let other threads get on with accessing the shared data, which can "
+"potentially lead to better overall performance."
 msgstr ""
+"Considera la posibilidad de copiar para evitar el bloqueo, donde la cantidad"
+" de datos es pequeña. Esto puede permitir que otros hilos sigan accediendo a"
+" los datos compartidos, lo que potencialmente puede conducir a un mejor "
+"rendimiento general."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:184
 msgid "Step 4 - (Optional) Enable Negative Capability Analysis"
-msgstr ""
+msgstr "Paso 4 - (Opcional) Habilitar análisis de capacidad negativa"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:186
 msgid ""
-"https://clang.llvm.org/docs/ThreadSafetyAnalysis.html#negative-"
-"capabilities"
+"https://clang.llvm.org/docs/ThreadSafetyAnalysis.html#negative-capabilities"
 msgstr ""
+"https://clang.llvm.org/docs/ThreadSafetyAnalysis.html#negative-capabilities"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:188
 msgid ""
-"Negative Capability Analysis lets you specify “this lock must not be held"
-" when calling this function”. It can reveal potential deadlock cases that"
-" other annotations cannot."
+"Negative Capability Analysis lets you specify “this lock must not be held "
+"when calling this function”. It can reveal potential deadlock cases that "
+"other annotations cannot."
 msgstr ""
+"El análisis de capacidad negativa te permite especificar \"este bloqueo no "
+"debe mantenerse al llamar a esta función\". Puede revelar posibles casos de "
+"punto muerto que otras anotaciones no pueden."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:190
 msgid ""
-"Where you specified ``-Wthread-safety``, add the additional flag "
-"``-Wthread-safety-negative``"
+"Where you specified ``-Wthread-safety``, add the additional flag ``-Wthread-"
+"safety-negative``"
 msgstr ""
+"Donde especificas ``-Wthread-safety``, agrega el indicador adicional "
+"``-Wthread-safety-negative``"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:191
 msgid ""
 "On any function that acquires a lock, use the "
 "``RCPPUTILS_TSA_REQUIRES(!mutex)`` pattern"
 msgstr ""
+"En cualquier función que adquiera un bloqueo, a el patrón "
+"``RCPPUTILS_TSA_REQUIRES(!mutex)``"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:193
 msgid "How to run the analysis"
-msgstr ""
+msgstr "Cómo ejecutar el análisis"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:195
 msgid ""
-"The ROS CI build farm runs a nightly job with ``libcxx``, which will "
-"surface any issues in the ROS 2 core stack by being marked \"Unstable\" "
-"when Thread Safety Analysis raises warnings"
+"The ROS CI build farm runs a nightly job with ``libcxx``, which will surface"
+" any issues in the ROS 2 core stack by being marked \"Unstable\" when Thread"
+" Safety Analysis raises warnings"
 msgstr ""
+"La granja de compilación ROS CI ejecuta un trabajo nocturno con ``libcxx``, "
+"que hará surgir cualquier problema en la pila principal de ROS 2 al marcarse"
+" como \"Inestable\" cuando Thread Safety Analysis genere advertencias"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:196
 msgid "For local runs, you have the following options, all equivalent"
 msgstr ""
+"Para ejecuciones locales, tienes las siguientes opciones, todas equivalentes"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:198
 msgid ""
-"Use the colcon `clang-libcxx mixin <https://github.com/colcon/colcon-"
-"mixin-repository/blob/master/clang-libcxx.mixin>`__ (see the "
-"`documentation <https://github.com/colcon/colcon-mixin-"
-"repository/blob/master/README.md>`__ for configuring mixins) ::"
+"Use the colcon `clang-libcxx mixin <https://github.com/colcon/colcon-mixin-"
+"repository/blob/master/clang-libcxx.mixin>`__ (see the `documentation "
+"<https://github.com/colcon/colcon-mixin-repository/blob/master/README.md>`__"
+" for configuring mixins) ::"
 msgstr ""
+"Utiliza el mixin colcon `clang-libcxx <https://github.com/colcon/colcon-"
+"mixin-repository/blob/master/clang-libcxx.mixin>`__"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:203
 msgid "Passing compiler to CMake ::"
-msgstr ""
+msgstr "``construcción colcon --mixin clang-libcxx``"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:208
 msgid "Overriding system compiler ::"
 msgstr ""
+"Solo puedes usar esto si tiene `mixins configurados para su instalación de "
+"colcon <https://github.com/colcon/colcon-mixin-"
+"repository/blob/master/README.md>`__"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:213
 msgid "**Resulting Context:**"
-msgstr ""
+msgstr "Pasar el compilador a CMake"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:215
 msgid ""
-"Potential deadlocks and race conditions will be surfaced at compile time,"
-" when using Clang and ``libcxx``"
+"Potential deadlocks and race conditions will be surfaced at compile time, "
+"when using Clang and ``libcxx``"
 msgstr ""
+"``colcon build --cmake-args -DCMAKE_C_COMPILER=clang "
+"-DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_FLAGS='-stdlib=libc++ "
+"-D_LIBCPP_ENABLE_THREAD_SAFETY_ANNOTATIONS' -DFORCE_BUILD_VENDOR_PKG=ON "
+"--no-warn-unused-cli``"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:219
 msgid "Dynamic analysis (data races & deadlocks)"
-msgstr ""
+msgstr "Anulación del compilador del sistema"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:223
 msgid "You are developing/debugging your multithreaded C++ production code."
 msgstr ""
+"``CC=clang CXX=clang++ colcon build --cmake-args "
+"-DCMAKE_CXX_FLAGS='-stdlib=libc++ "
+"-D_LIBCPP_ENABLE_THREAD_SAFETY_ANNOTATIONS' -DFORCE_BUILD_VENDOR_PKG=ON "
+"--no-warn-unused-cli``"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:224
 msgid ""
 "You use pthreads or C++11 threading + llvm libc++ (in case of "
 "ThreadSanitizer)."
-msgstr ""
+msgstr "**Contexto resultante:**"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:225
-msgid "You do not use Libc/libstdc++ static linking (in case of ThreadSanitizer)."
+msgid ""
+"You do not use Libc/libstdc++ static linking (in case of ThreadSanitizer)."
 msgstr ""
+"Los interbloqueos potenciales y las condiciones de ejecución aparecerán en "
+"el momento de la compilación, al usar Clang y ``libcxx``"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:226
 msgid ""
 "You do not build non-position-independent executables (in case of "
 "ThreadSanitizer)."
-msgstr ""
+msgstr "Análisis dinámico (ejecución de datos y puntos muertos)"
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:231
 msgid ""
-"Data races and deadlocks cannot be detected using static analysis "
-"(reason: limitation of static analysis)."
+"Data races and deadlocks cannot be detected using static analysis (reason: "
+"limitation of static analysis)."
 msgstr ""
+"Estas desarrollando/depurando tu código de producción C++ multiproceso."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:232
 msgid ""
 "Data races and deadlocks must not show up during development debugging / "
-"testing (reason: usually not all possible control paths through "
-"production code exercised)."
+"testing (reason: usually not all possible control paths through production "
+"code exercised)."
 msgstr ""
+"Usas pthreads o C++11 threading + llvm libc++ (en el caso de "
+"ThreadSanitizer)."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:236
 msgid ""
 "Use a dynamic analysis tool which focuses on finding data races and "
 "deadlocks (here clang ThreadSanitizer)."
 msgstr ""
+"No utilizas enlaces estáticos Libc/libstdc++ (en el caso de "
+"ThreadSanitizer)."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:240
 msgid ""
 "Compile and link the production code with clang using the option "
 "``-fsanitize=thread`` (this instruments the production code)."
 msgstr ""
+"No creas ejecutables que no sean independientes de la posición (en el caso "
+"de ThreadSanitizer)."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:241
 msgid ""
-"In case different production code shall be executed during analysis "
-"consider conditional compilation e.g. `ThreadSanitizers "
+"In case different production code shall be executed during analysis consider"
+" conditional compilation e.g. `ThreadSanitizers "
 "_has_feature(thread_sanitizer) "
 "<https://clang.llvm.org/docs/ThreadSanitizer.html#has-feature-thread-"
 "sanitizer>`__."
 msgstr ""
+"Las condiciones de carrera y los interbloqueos pueden provocar errores "
+"críticos."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:242
 msgid ""
@@ -489,50 +619,76 @@ msgid ""
 "<https://clang.llvm.org/docs/ThreadSanitizer.html#attribute-no-sanitize-"
 "thread>`__."
 msgstr ""
+"Las condiciones de carrerq y los interbloqueos no se pueden detectar "
+"mediante el análisis estático (motivo: limitación del análisis estático)."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:243
 msgid ""
-"In case some files shall not be instrumented consider file or function-"
-"level exclusion `ThreadSanitizers blacklisting "
+"In case some files shall not be instrumented consider file or function-level"
+" exclusion `ThreadSanitizers blacklisting "
 "<https://clang.llvm.org/docs/ThreadSanitizer.html#ignorelist>`__, more "
 "specific: `ThreadSanitizers Sanitizer Special Case List "
 "<https://clang.llvm.org/docs/SanitizerSpecialCaseList.html>`__ or with "
 "`ThreadSanitizers no_sanitize(\"thread\") "
-"<https://clang.llvm.org/docs/ThreadSanitizer.html#ignorelist>`__ and use "
-"the option ``--fsanitize-blacklist``."
+"<https://clang.llvm.org/docs/ThreadSanitizer.html#ignorelist>`__ and use the"
+" option ``--fsanitize-blacklist``."
 msgstr ""
+"Las condiciones de carrera y los interbloqueos no deben aparecer durante la "
+"depuración/prueba del desarrollo (razón: por lo general, no se ejercen todas"
+" las rutas de control posibles a través del código de producción)."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:245
 msgid "**Resulting context:**"
 msgstr ""
+"Utilizar una herramienta de análisis dinámico que se centre en la búsqueda "
+"de condiciones de carrera y puntos muertos (aquí clang ThreadSanitizer)."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:247
 msgid ""
 "Higher chance to find data races and deadlocks in production code before "
 "deploying it."
 msgstr ""
+"Compila y vincula el código de producción con clang usando la opción "
+"``-fsanitize=thread`` (esto instrumenta el código de producción)."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:248
 msgid ""
-"Analysis result may lack reliability, tool in beta phase stage (in case "
-"of ThreadSanitizer)."
+"Analysis result may lack reliability, tool in beta phase stage (in case of "
+"ThreadSanitizer)."
 msgstr ""
+"En caso de que se ejecute un código de producción diferente durante el "
+"análisis, considere la compilación condicional, p. `ThreadSanitizers "
+"_has_feature(thread_sanitizer) "
+"<https://clang.llvm.org/docs/ThreadSanitizer.html#has-feature-thread-"
+"sanitizer>`__."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:249
 msgid ""
 "Overhead due to production code instrumentation (maintenance of separate "
 "branches for instrumented/not instrumented production code, etc.)."
 msgstr ""
+"En caso de que no se instrumente algún código, considere `ThreadSanitizers "
+"_/*attribute*/_((no_sanitize(\"thread\"))) "
+"<https://clang.llvm.org/docs/ThreadSanitizer.html#attribute-no- higienizar-"
+"hilo>`__."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:250
 msgid ""
-"Instrumented code needs more memory per thread (in case of "
-"ThreadSanitizer)."
+"Instrumented code needs more memory per thread (in case of ThreadSanitizer)."
 msgstr ""
+"En caso de que algunos archivos no se instrumenten, considera la exclusión a"
+" nivel de archivo o función `ThreadSanitizers blacklisting "
+"<https://clang.llvm.org/docs/ThreadSanitizer.html#ignorelist>`__, más "
+"específicamente: `ThreadSanitizers Sanitizer Special Case List "
+"<https://clang.llvm.org/docs/SanitizerSpecialCaseList.html>`__ o con "
+"`ThreadSanitizers no_sanitize(\"thread\") "
+"<https://clang.llvm.org/docs/ThreadSanitizer.html#ignorelist>`__ y usa la "
+"opción ``--fsanitize-blacklist``."
 
 #: ../../source/The-ROS2-Project/Contributing/Quality-Guide.rst:251
 msgid ""
 "Instrumented code maps a lot virtual address space (in case of "
 "ThreadSanitizer)."
 msgstr ""
-
+"Mayor probabilidad de encontrar carreras de datos y puntos muertos en el "
+"código de producción antes de implementarlo."
